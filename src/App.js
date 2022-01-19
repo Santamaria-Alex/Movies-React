@@ -63,7 +63,11 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Movies movies={movies} onDelete={deleteMovie} />
+      {movies.length > 0 ? (
+        <Movies movies={movies} onDelete={deleteMovie} />
+      ) : (
+        "No Movies to Show"
+      )}
     </div>
   );
 }
