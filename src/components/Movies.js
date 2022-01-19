@@ -1,11 +1,11 @@
 import React from "react";
 import Movie from "./Movie";
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, onDelete }) => {
   return (
     <div>
       {movies.map((movie) => (
-        <Movie key={movie.id} movie={movie} />
+        <Movie key={movie.id} movie={movie} onDelete={onDelete} />
       ))}
     </div>
   );

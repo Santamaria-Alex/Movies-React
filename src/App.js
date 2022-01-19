@@ -55,10 +55,15 @@ function App() {
     },
   ]);
 
+  //delete movies function
+  const deleteMovie = (id) => {
+    setMovies(movies.filter((movie) => movie.id !== id));
+  };
+
   return (
     <div className="container">
       <Header />
-      <Movies movies={movies} />
+      <Movies movies={movies} onDelete={deleteMovie} />
     </div>
   );
 }
