@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Movies from "./components/Movies";
 import { useState } from "react";
+import AddMovie from "./components/AddMovie";
 
 function App() {
   const [movies, setMovies] = useState([
@@ -81,6 +82,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <AddMovie />
       {movies.length > 0 ? (
         <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
       ) : (

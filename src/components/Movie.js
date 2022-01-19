@@ -13,7 +13,7 @@ const Movie = ({ movie, onDelete, onToggle }) => {
         />
       </h3>
       <p>
-        Director: {movie.director}, {movie.year}
+        {movie.director}, {movie.year}
       </p>
       <BiDotsHorizontalRounded
         onClick={(id) => onToggle(movie.id)}
