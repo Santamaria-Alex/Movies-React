@@ -1,11 +1,16 @@
 import React from "react";
 import Movie from "./Movie";
 
-const Movies = ({ movies, onDelete }) => {
+const Movies = ({ movies, onDelete, onToggle }) => {
   return (
     <div>
       {movies.map((movie) => (
-        <Movie key={movie.id} movie={movie} onDelete={onDelete} />
+        <Movie
+          key={movie.id}
+          movie={movie}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );

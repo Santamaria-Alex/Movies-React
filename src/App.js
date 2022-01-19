@@ -15,6 +15,7 @@ function App() {
       plot: "160 elite U.S. soldiers drop into Somalia to capture two top lieutenants of a renegade warlord and find themselves in a desperate battle with a large force of heavily-armed Somalis.",
       actors: "Josh Hartnett, Ewan McGregor, Tom Sizemore, Eric Bana",
       id: 2,
+      reminder: false,
     },
     {
       title: "tenet",
@@ -28,6 +29,7 @@ function App() {
       actors:
         "Elizabeth Debicki, Robert Pattinson, John David Washington, Aaron Taylor-Johnson",
       id: 3,
+      reminder: false,
     },
     {
       title: "resident evil",
@@ -40,6 +42,7 @@ function App() {
       plot: "A special military unit fights a powerful, out-of-control supercomputer and hundreds of scientists who have mutated into flesh-eating creatures after a laboratory accident.",
       actors: "Ryan McCluskey, Oscar Pearce, Indra Ové, Anna Bolt",
       id: 4,
+      reminder: false,
     },
     {
       title: "Boogalo",
@@ -52,6 +55,7 @@ function App() {
       poster:
         "https://m.media-amazon.com/images/M/MV5BNGMwNGI0NzAtY2U1Zi00MTI3LTk2NWQtMTU0ZmQ3OGZmMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY1200_CR86,0,630,1200_AL_.jpg",
       id: 5,
+      reminder: false,
     },
   ]);
 
@@ -60,11 +64,25 @@ function App() {
     setMovies(movies.filter((movie) => movie.id !== id));
   };
 
+  //toggle plot
+  const togglePlot = (id) => {
+    setMovies(
+      movies.map((movie) =>
+        movie.id === id
+          ? {
+              ...movie,
+              reminder: !movie.reminder,
+            }
+          : movie
+      )
+    );
+  };
+
   return (
     <div className="container">
       <Header />
       {movies.length > 0 ? (
-        <Movies movies={movies} onDelete={deleteMovie} />
+        <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
       ) : (
         "No Movies to Show"
       )}
