@@ -1,10 +1,11 @@
 import React from "react";
+import Movie from "./Movie";
 
 const Movies = ({ movies }) => {
   return (
     <div>
       {movies.map((movie) => (
-        <h3 key={movie.id}>{movie.title}</h3>
+        <Movie key={movie.id} movie={movie} />
       ))}
     </div>
   );
