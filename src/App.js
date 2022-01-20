@@ -90,7 +90,10 @@ function App() {
 
   return (
     <div className="container">
-      <Header onAdd={() => setShowAddMovie(!showAddMovie)} />
+      <Header
+        onAdd={() => setShowAddMovie(!showAddMovie)}
+        showAdd={showAddMovie}
+      />
       {showAddMovie && <AddMovie onAdd={addMovie} />}
       {movies.length > 0 ? (
         <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
