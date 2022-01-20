@@ -35,6 +35,20 @@
       "actors": "Ryan McCluskey, Oscar Pearce, Indra Ové, Anna Bolt",
       "id": 4,
       "plotShow": false
+    },
+    {
+      "title": "test",
+      "director": "test",
+      "releaseDate": "45",
+      "plot": "test",
+      "id": 5
+    },
+    {
+      "title": "testing",
+      "director": "teseting",
+      "releaseDate": "5235",
+      "plot": "testing",
+      "id": 6
     }
   ]
 }

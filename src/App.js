@@ -26,10 +26,22 @@ function App() {
   };
 
   //Add movies function
-  const addMovie = (movie) => {
-    const id = Math.floor(Math.random() * 1000) + 1;
-    const newMovie = { id, ...movie };
-    setMovies([...movies, newMovie]);
+  const addMovie = async (movie) => {
+    const res = await fetch("http://localhost:3000/movies", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(movie),
+    });
+
+    const data = await res.json();
+
+    setMovies([...movies, data]);
+
+    // const id = Math.floor(Math.random() * 1000) + 1;
+    // const newMovie = { id, ...movie };
+    // setMovies([...movies, newMovie]);
   };
 
   //delete movies function
