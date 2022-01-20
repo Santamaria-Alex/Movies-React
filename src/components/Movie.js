@@ -6,7 +6,7 @@ const Movie = ({ movie, onDelete, onToggle }) => {
   return (
     <div className="task">
       <h3>
-        {movie.title}{" "}
+        {movie.title}
         <FaTimes
           onClick={() => onDelete(movie.id)}
           style={{ color: "red", cursor: "pointer" }}
@@ -19,7 +19,7 @@ const Movie = ({ movie, onDelete, onToggle }) => {
         onClick={(id) => onToggle(movie.id)}
         style={{ marginTop: "10px", display: "block", cursor: "pointer" }}
       />
-      <p style={{ display: `${movie.reminder ? "block" : "none"}` }}>
+      <p style={{ display: `${movie.plotShow ? "block" : "none"}` }}>
         Plot: {movie.plot}
       </p>
     </div>

@@ -16,7 +16,7 @@ function App() {
       plot: "160 elite U.S. soldiers drop into Somalia to capture two top lieutenants of a renegade warlord and find themselves in a desperate battle with a large force of heavily-armed Somalis.",
       actors: "Josh Hartnett, Ewan McGregor, Tom Sizemore, Eric Bana",
       id: 2,
-      reminder: false,
+      plotShow: false,
     },
     {
       title: "tenet",
@@ -30,7 +30,7 @@ function App() {
       actors:
         "Elizabeth Debicki, Robert Pattinson, John David Washington, Aaron Taylor-Johnson",
       id: 3,
-      reminder: false,
+      plotShow: false,
     },
     {
       title: "resident evil",
@@ -43,7 +43,7 @@ function App() {
       plot: "A special military unit fights a powerful, out-of-control supercomputer and hundreds of scientists who have mutated into flesh-eating creatures after a laboratory accident.",
       actors: "Ryan McCluskey, Oscar Pearce, Indra Ové, Anna Bolt",
       id: 4,
-      reminder: false,
+      plotShow: false,
     },
     {
       title: "Boogalo",
@@ -56,9 +56,16 @@ function App() {
       poster:
         "https://m.media-amazon.com/images/M/MV5BNGMwNGI0NzAtY2U1Zi00MTI3LTk2NWQtMTU0ZmQ3OGZmMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY1200_CR86,0,630,1200_AL_.jpg",
       id: 5,
-      reminder: false,
+      plotShow: false,
     },
   ]);
+
+  //Add movies function
+  const addMovie = (movie) => {
+    const id = Math.floor(Math.random() * 1000) + 1;
+    const newMovie = { id, ...movie };
+    setMovies([...movies, newMovie]);
+  };
 
   //delete movies function
   const deleteMovie = (id) => {
@@ -72,7 +79,7 @@ function App() {
         movie.id === id
           ? {
               ...movie,
-              reminder: !movie.reminder,
+              plotShow: !movie.plotShow,
             }
           : movie
       )
@@ -82,7 +89,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <AddMovie />
+      <AddMovie onAdd={addMovie} />
       {movies.length > 0 ? (
         <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
       ) : (

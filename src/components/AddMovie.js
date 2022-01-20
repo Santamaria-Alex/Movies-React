@@ -1,21 +1,38 @@
 import React from "react";
 import { useState } from "react";
 
-const AddMovie = () => {
-  const [movieTitle, setMovieTitle] = useState("");
+const AddMovie = ({ onAdd }) => {
+  const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
   const [plot, setPlot] = useState("");
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    if (!title) {
+      alert("Please add a movie");
+      return;
+    }
+
+    onAdd({ title, director, releaseDate, plot });
+
+    //clear the form
+    setTitle("");
+    setDirector("");
+    setReleaseDate("");
+    setPlot("");
+  };
+
   return (
-    <form className="add-form">
+    <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
         <label htmlFor="">Movie</label>
         <input
           type="text"
           placeholder="Add Movie"
-          value={movieTitle}
-          onChange={(e) => setMovieTitle(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
 
@@ -32,7 +49,7 @@ const AddMovie = () => {
       <div className="form-control">
         <label htmlFor="">Release Date</label>
         <input
-          type="date"
+          type="number"
           placeholder="Add Release Date"
           value={releaseDate}
           onChange={(e) => setReleaseDate(e.target.value)}
