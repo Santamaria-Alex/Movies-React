@@ -3,7 +3,7 @@ import Movie from "./Movie";
 
 const Movies = ({ movies, onDelete, onToggle }) => {
   return (
-    <div>
+    <div className="list-container">
       {movies.map((movie) => (
         <Movie
           key={movie.id}
