@@ -4,6 +4,8 @@ import { useState } from "react";
 import AddMovie from "./components/AddMovie";
 
 function App() {
+  const [showAddMovie, setShowAddMovie] = useState(false);
+
   const [movies, setMovies] = useState([
     {
       title: "down",
@@ -88,8 +90,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <AddMovie onAdd={addMovie} />
+      <Header onAdd={() => setShowAddMovie(!showAddMovie)} />
+      {showAddMovie && <AddMovie onAdd={addMovie} />}
       {movies.length > 0 ? (
         <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
       ) : (
