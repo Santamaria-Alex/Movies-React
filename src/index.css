@@ -57,21 +57,98 @@ body {
 .list-container {
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
 }
 
-.task {
+.card {
   background: #f4f4f4;
   margin: 5px;
   padding: 10px 20px;
   height: 300px;
   width: 200px;
+  perspective: 1000px;
 }
 
-.task h3 {
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card-face-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-face-back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+}
+
+.card-header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card-header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 0 0 50% 0;
+}
+
+/* .card__header h2 {
+  color: white;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+} */
+
+.card-header h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.card-body h3 {
+  color: var(--dark);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .add-form {
