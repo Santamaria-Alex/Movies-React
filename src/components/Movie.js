@@ -14,10 +14,10 @@ const Movie = ({ movie, onDelete, onToggle }) => {
     <div className="card">
       <div
         className={isFlipped ? "card-inner" : "card-inner is-flipped"}
-        onClick={handleToggle}
+        onDoubleClick={handleToggle}
       >
         <div className="card-face card-face-front">
-          <h2>Front</h2>
+          <img className="poster" src={movie.poster} alt="No Poster Provided" />
         </div>
         <div className="card-face card-face-back">
           <div className="card-content">

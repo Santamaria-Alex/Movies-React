@@ -19,7 +19,7 @@ function App() {
     getMovies();
   }, []);
 
-  //Fetch movies
+  // Fetch movies
   const fetchMovies = async () => {
     const res = await fetch("http://localhost:3000/movies");
     const data = await res.json();
@@ -31,13 +31,12 @@ function App() {
     const res = await fetch(
       `http://www.omdbapi.com/?apikey=${API_KEY}&t=finding+nemo`
     );
-
     const data = await res.json();
 
     console.log(data);
+    return data;
   };
-
-  omdb();
+  // omdb();
 
   //Add movies function
   const addMovie = async (movie) => {
@@ -80,11 +79,6 @@ function App() {
       )
     );
   };
-
-  //flip card
-  // const flipCard = () =>{
-
-  // }
 
   return (
     <div className="container">
