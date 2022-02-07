@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import AddMovie from "./components/AddMovie";
 
 function App() {
-  const API_KEY = "e969033d";
+  // const API_KEY = "e969033d";
 
   const [showAddMovie, setShowAddMovie] = useState(false);
-
   const [movies, setMovies] = useState([]);
+  // const [omdbMovies, setomdbMovies] = useState([]);
 
   useEffect(() => {
     const getMovies = async () => {
@@ -27,16 +27,25 @@ function App() {
     return data;
   };
 
-  const omdb = async () => {
-    const res = await fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&t=finding+nemo`
-    );
-    const data = await res.json();
+  // useEffect(() => {
+  //   const getOmdbMovies = async () => {
+  //     const moviesFromOmdb = await omdbFetch();
+  //     setomdbMovies(moviesFromOmdb);
+  //   };
 
-    console.log(data);
-    return data;
-  };
-  // omdb();
+  //   getOmdbMovies();
+  // }, []);
+
+  // const omdbFetch = async () => {
+  //   const res = await fetch(
+  //     `http://www.omdbapi.com/?apikey=${API_KEY}&t=finding+nemo`
+  //   );
+  //   const data = await res.json();
+
+  //   console.log(data);
+  //   return data;
+  // };
+  // omdbFetch();
 
   //Add movies function
   const addMovie = async (movie) => {
