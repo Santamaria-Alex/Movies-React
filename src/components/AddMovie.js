@@ -8,33 +8,50 @@ const AddMovie = ({ onAdd }) => {
   const [releaseDate, setReleaseDate] = useState("");
   const [plot, setPlot] = useState("");
 
-  const [search, setSearch] = useState("");
-
   //OMDB
-  const API_KEY = "e969033d";
-  const [omdbMovies, setomdbMovies] = useState([]);
-  // const search = document.getElementById("search").value;
-  // console.log(search);
+  // const API_KEY = "e969033d";
+  const API_KEY = "9244d6b2a6c183656ecaf1fa85b40a77";
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    const getOmdbMovies = async () => {
-      const moviesFromOmdb = await omdbFetch();
-      setomdbMovies(moviesFromOmdb);
-    };
+  const onChange = (e) => {
+    e.preventDefault();
 
-    getOmdbMovies();
-  }, []);
+    setSearch(e.target.value);
 
-  const omdbFetch = async () => {
-    const res = await fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&t=${search}`
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
+    ).then((res) =>
+      res.json().then((data) => {
+        if (!data.errors) {
+          setResults(data.results);
+          console.log(data.results);
+        } else {
+          setResults([]);
+        }
+      })
     );
-    const data = await res.json();
-
-    console.log(data);
-    return data;
   };
-  omdbFetch();
+
+  // useEffect(() => {
+  //   const getOmdbMovies = async () => {
+  //     const moviesFromOmdb = await omdbFetch();
+  //     setomdbMovies(moviesFromOmdb);
+  //   };
+
+  //   getOmdbMovies();
+  // }, []);
+
+  // const omdbFetch = async () => {
+  //   const res = await fetch(
+  //     `http://www.omdbapi.com/?apikey=${API_KEY}&t=${search}`
+  //   );
+  //   const data = await res.json();
+
+  //   console.log(data);
+  //   return data;
+  // };
+  // omdbFetch();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -53,33 +70,34 @@ const AddMovie = ({ onAdd }) => {
     setPlot("");
   };
 
-  const onSearch = (e) => {
-    e.preventDefault();
+  // const onSearch = (e) => {
+  //   e.preventDefault();
 
-    const searchResult = document.createElement("div");
-    searchResult.innerHTML = `
-    <div className="card">
-      <div className="card-inner">
-        <div className="card-face card-face-front search-image">
-          <img className="poster" src=${omdbMovies.Poster} alt="No Poster Provided" />
-        </div>
-      </div>
-    </div>
-    `;
+  //   const searchResult = document.createElement("div");
+  //   searchResult.innerHTML = `
+  //   <div className="card">
+  //     <div className="card-inner">
+  //       <div className="card-face card-face-front search-image">
+  //         <img className="poster" src=${omdbMovies.Poster} alt="No Poster Provided" />
+  //       </div>
+  //     </div>
+  //   </div>
+  //   `;
 
-    const form_control = document.getElementById("form-control");
-    form_control.append(searchResult);
-  };
+  //   const form_control = document.getElementById("form-control");
+  //   form_control.append(searchResult);
+  // };
 
   return (
-    <form onSubmit={onSearch}>
+    <form>
       <div className="form-control" id="form-control">
         <label htmlFor="">Movie</label>
         <input
           type="text"
+          value={search}
           placeholder="Search Catalog for Movie"
           id="search"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={onChange}
         />
       </div>
     </form>
