@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import Search from "./Search";
 
 const AddMovie = ({ onAdd }) => {
-  const [title, setTitle] = useState("");
-  const [director, setDirector] = useState("");
-  const [releaseDate, setReleaseDate] = useState("");
-  const [plot, setPlot] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [director, setDirector] = useState("");
+  // const [releaseDate, setReleaseDate] = useState("");
+  // const [plot, setPlot] = useState("");
 
   //OMDB
   // const API_KEY = "e969033d";
@@ -33,42 +33,22 @@ const AddMovie = ({ onAdd }) => {
     );
   };
 
-  // useEffect(() => {
-  //   const getOmdbMovies = async () => {
-  //     const moviesFromOmdb = await omdbFetch();
-  //     setomdbMovies(moviesFromOmdb);
-  //   };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
 
-  //   getOmdbMovies();
-  // }, []);
+  //   // if (!title) {
+  //   //   alert("Please add a movie");
+  //   //   return;
+  //   // }
 
-  // const omdbFetch = async () => {
-  //   const res = await fetch(
-  //     `http://www.omdbapi.com/?apikey=${API_KEY}&t=${search}`
-  //   );
-  //   const data = await res.json();
+  //   onAdd({ title, director, releaseDate, plot });
 
-  //   console.log(data);
-  //   return data;
+  //   //clear the form
+  //   setTitle("");
+  //   setDirector("");
+  //   setReleaseDate("");
+  //   setPlot("");
   // };
-  // omdbFetch();
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    // if (!title) {
-    //   alert("Please add a movie");
-    //   return;
-    // }
-
-    onAdd({ title, director, releaseDate, plot });
-
-    //clear the form
-    setTitle("");
-    setDirector("");
-    setReleaseDate("");
-    setPlot("");
-  };
 
   // const onSearch = (e) => {
   //   e.preventDefault();
@@ -99,6 +79,16 @@ const AddMovie = ({ onAdd }) => {
           id="search"
           onChange={onChange}
         />
+
+        {results.length > 0 && (
+          <ul>
+            {results.map((movie) => {
+              <li key={movie.id}>
+                <h3>{movie.title}</h3>
+              </li>;
+            })}
+          </ul>
+        )}
       </div>
     </form>
 
