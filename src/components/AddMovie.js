@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Search from "./Search";
+import { Result } from "./Result";
 
 const AddMovie = ({ onAdd }) => {
   // const [title, setTitle] = useState("");
@@ -79,13 +79,17 @@ const AddMovie = ({ onAdd }) => {
           id="search"
           onChange={onChange}
         />
+      </div>
 
+      <div>
         {results.length > 0 && (
-          <ul>
+          <ul className="testing">
             {results.map((movie) => {
-              <li key={movie.id}>
-                <h3>{movie.title}</h3>
-              </li>;
+              return (
+                <li key={movie.id}>
+                  <Result movie={movie} />
+                </li>
+              );
             })}
           </ul>
         )}
