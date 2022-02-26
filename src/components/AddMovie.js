@@ -50,24 +50,6 @@ const AddMovie = ({ onAdd }) => {
   //   setPlot("");
   // };
 
-  // const onSearch = (e) => {
-  //   e.preventDefault();
-
-  //   const searchResult = document.createElement("div");
-  //   searchResult.innerHTML = `
-  //   <div className="card">
-  //     <div className="card-inner">
-  //       <div className="card-face card-face-front search-image">
-  //         <img className="poster" src=${omdbMovies.Poster} alt="No Poster Provided" />
-  //       </div>
-  //     </div>
-  //   </div>
-  //   `;
-
-  //   const form_control = document.getElementById("form-control");
-  //   form_control.append(searchResult);
-  // };
-
   return (
     <form>
       <div className="form-control" id="form-control">
@@ -87,7 +69,7 @@ const AddMovie = ({ onAdd }) => {
             {results.map((movie) => {
               return (
                 <li key={movie.id}>
-                  <Result movie={movie} />
+                  <Result movie={movie} onAdd={onAdd} />
                 </li>
               );
             })}

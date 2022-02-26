@@ -1,6 +1,29 @@
 import React from "react";
+import { useState } from "react";
 
-export const Result = ({ movie }) => {
+export const Result = ({ movie, onAdd }) => {
+  const [title, setTitle] = useState("");
+  const [director, setDirector] = useState("");
+  const [releaseDate, setReleaseDate] = useState("");
+  const [plot, setPlot] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    // if (!title) {
+    //   alert("Please add a movie");
+    //   return;
+    // }
+
+    onAdd({ title, director, releaseDate, plot });
+
+    //clear the form
+    setTitle("");
+    setDirector("");
+    setReleaseDate("");
+    setPlot("");
+  };
+
   return (
     <div className="results">
       <div className="poster">
@@ -25,6 +48,12 @@ export const Result = ({ movie }) => {
           ) : (
             "-"
           )}
+        </div>
+
+        <div className="add-movie">
+          <button className="add-movie-button" onClick={onSubmit}>
+            Add Movie to Database
+          </button>
         </div>
       </div>
     </div>

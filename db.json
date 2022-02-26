@@ -49,6 +49,20 @@
       "releaseDate": "1993",
       "plot": "test plot",
       "id": 6
+    },
+    {
+      "title": "",
+      "director": "",
+      "releaseDate": "",
+      "plot": "",
+      "id": 7
+    },
+    {
+      "title": "",
+      "director": "",
+      "releaseDate": "",
+      "plot": "",
+      "id": 8
     }
   ]
 }
