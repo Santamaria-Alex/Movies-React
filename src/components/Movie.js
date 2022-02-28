@@ -18,7 +18,9 @@ const Movie = ({ movie, onDelete, onToggle }) => {
       >
         <div className="card-face card-face-front">
           <img className="poster" src={movie.poster} alt="No Poster Provided" />
+          <div className="rating">{movie.rating}</div>
         </div>
+
         <div className="card-face card-face-back">
           <div className="card-content">
             <div className="card-header">
