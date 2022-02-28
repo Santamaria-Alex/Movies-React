@@ -119,6 +119,7 @@ body {
   z-index: 1;
   border-radius: 3px;
   cursor: pointer;
+  backface-visibility: hidden;
 }
 
 .card-face-back {
