@@ -14,7 +14,7 @@ const Movie = ({ movie, onDelete, onToggle }) => {
     <div className="card">
       <div
         className={isFlipped ? "card-inner" : "card-inner is-flipped"}
-        onDoubleClick={handleToggle}
+        onClick={handleToggle}
       >
         <div className="card-face card-face-front">
           <img className="poster" src={movie.poster} alt="No Poster Provided" />

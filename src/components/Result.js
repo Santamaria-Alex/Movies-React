@@ -1,11 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 
 export const Result = ({ movie, onAdd }) => {
   const [title, setTitle] = useState("");
+  const [rating, setRating] = useState("");
+  const [poster, setPoster] = useState("");
+  const [year, setYear] = useState("");
+  const [genre, setGenre] = useState("");
   const [director, setDirector] = useState("");
-  const [releaseDate, setReleaseDate] = useState("");
   const [plot, setPlot] = useState("");
+  const [actors, setActors] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +19,22 @@ export const Result = ({ movie, onAdd }) => {
     //   alert("Please add a movie");
     //   return;
     // }
+    setTitle(`${movie.title}`);
+    setRating(`${movie.vote_average}`);
+    setPoster(`https://image.tmdb.org/t/p/w200${movie.poster_path}`);
+    setYear(`${movie.release_date.substring(0, 4)}`);
+    setGenre("No Genre");
+    setDirector("No Director");
+    setPlot(`${movie.overview}`);
+    setActors("No Actors");
 
-    onAdd({ title, director, releaseDate, plot });
+    onAdd({ title, rating, poster, year, genre, director, plot, actors });
 
     //clear the form
-    setTitle("");
-    setDirector("");
-    setReleaseDate("");
-    setPlot("");
+    // setTitle("");
+    // setDirector("");
+    // setReleaseDate("");
+    // setPlot("");
   };
 
   return (

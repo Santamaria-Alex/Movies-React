@@ -37,32 +37,48 @@
       "plotShow": false
     },
     {
-      "title": "test",
-      "director": "test",
-      "releaseDate": "45",
-      "plot": "test",
-      "id": 5
-    },
-    {
-      "title": "test",
-      "director": "test",
-      "releaseDate": "1993",
-      "plot": "test plot",
-      "id": 6
-    },
-    {
-      "title": "",
-      "director": "",
-      "releaseDate": "",
-      "plot": "",
-      "id": 7
-    },
-    {
-      "title": "",
-      "director": "",
-      "releaseDate": "",
-      "plot": "",
+      "title": "Dune",
+      "rating": "7.9",
+      "poster": "https://image.tmdb.org/t/p/w200/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+      "year": "2021",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+      "actors": "No Actors",
       "id": 8
+    },
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "rating": "7.9",
+      "poster": "https://image.tmdb.org/t/p/w200/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+      "year": "2001",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard—with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths—and about the villain who's to blame.",
+      "actors": "No Actors",
+      "id": 10
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "rating": "8.1",
+      "poster": "https://image.tmdb.org/t/p/w200/da22ZBmrDOXOCDRvr8Gic8ldhv4.jpg",
+      "year": "2011",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "Harry, Ron and Hermione continue their quest to vanquish the evil Voldemort once and for all. Just as things begin to look hopeless for the young wizards, Harry discovers a trio of magical objects that endow him with powers to rival Voldemort's formidable skills.",
+      "actors": "No Actors",
+      "id": 12
+    },
+    {
+      "title": "Mad Max: Fury Road",
+      "rating": "7.5",
+      "poster": "https://image.tmdb.org/t/p/w200/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
+      "year": "2015",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order.",
+      "actors": "No Actors",
+      "id": 14
     }
   ]
 }
