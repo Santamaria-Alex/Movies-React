@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
 
 export const Result = ({ movie, onAdd }) => {
   const [title, setTitle] = useState("");
