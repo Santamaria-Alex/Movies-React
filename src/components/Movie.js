@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { useState } from "react";
 import Modal from "./Modal";
+import { IconContext } from "react-icons/lib";
 
 const Movie = ({ movie, onDelete, onToggle }) => {
   const [modal, setModal] = useState(false);
@@ -19,13 +20,18 @@ const Movie = ({ movie, onDelete, onToggle }) => {
 
   return (
     <div className="card">
-      <div
-        className={isFlipped ? "card-inner" : "card-inner is-flipped"}
-        onDoubleClick={handleToggle}
-      >
+      <div className={isFlipped ? "card-inner" : "card-inner is-flipped"}>
         <div className="card-face card-face-front">
           {modal && <Modal />}
           <img className="poster" src={movie.poster} alt="No Poster Provided" />
+          {!modal && (
+            <IconContext.Provider value={{ color: "white", size: "20px" }}>
+              <BiDotsHorizontalRounded
+                className="dots"
+                onClick={handleToggle}
+              />
+            </IconContext.Provider>
+          )}
           <div className="rating" onClick={toggleModal}>
             {movie.rating}
           </div>
@@ -42,21 +48,17 @@ const Movie = ({ movie, onDelete, onToggle }) => {
               />
             </div>
 
+            <IconContext.Provider value={{ color: "black", size: "20px" }}>
+              <BiDotsHorizontalRounded
+                className="dots-back"
+                onClick={handleToggle}
+              />
+            </IconContext.Provider>
+
             <div className="card-body">
               <h3>
                 {movie.director}, {movie.year}
               </h3>
-              {/* <BiDotsHorizontalRounded
-                onClick={(id) => onToggle(movie.id)}
-                style={{
-                  marginTop: "10px",
-                  display: "block",
-                  cursor: "pointer",
-                }}
-              /> */}
-              {/* <p style={{ display: `${movie.plotShow ? "block" : "none"}` }}>
-                Plot: {movie.plot}
-              </p> */}
               <p>{movie.plot}</p>
             </div>
           </div>
