@@ -2,8 +2,15 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { useState } from "react";
+import Modal from "./Modal";
 
 const Movie = ({ movie, onDelete, onToggle }) => {
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
   const [isFlipped, setIsFlipped] = useState("false");
 
   const handleToggle = () => {
@@ -17,8 +24,11 @@ const Movie = ({ movie, onDelete, onToggle }) => {
         onDoubleClick={handleToggle}
       >
         <div className="card-face card-face-front">
+          {modal && <Modal />}
           <img className="poster" src={movie.poster} alt="No Poster Provided" />
-          <div className="rating">{movie.rating}</div>
+          <div className="rating" onClick={toggleModal}>
+            {movie.rating}
+          </div>
         </div>
 
         <div className="card-face card-face-back">

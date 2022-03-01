@@ -27,26 +27,6 @@ function App() {
     return data;
   };
 
-  // useEffect(() => {
-  //   const getOmdbMovies = async () => {
-  //     const moviesFromOmdb = await omdbFetch();
-  //     setomdbMovies(moviesFromOmdb);
-  //   };
-
-  //   getOmdbMovies();
-  // }, []);
-
-  // const omdbFetch = async () => {
-  //   const res = await fetch(
-  //     `http://www.omdbapi.com/?apikey=${API_KEY}&t=finding+nemo`
-  //   );
-  //   const data = await res.json();
-
-  //   console.log(data);
-  //   return data;
-  // };
-  // omdbFetch();
-
   //Add movies function
   const addMovie = async (movie) => {
     const res = await fetch("http://localhost:3000/movies", {
