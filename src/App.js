@@ -8,6 +8,7 @@ function App() {
 
   const [showAddMovie, setShowAddMovie] = useState(false);
   const [movies, setMovies] = useState([]);
+  // const [rating, setRating] = useState([]);
   // const [omdbMovies, setomdbMovies] = useState([]);
 
   useEffect(() => {
@@ -55,6 +56,37 @@ function App() {
     setMovies(movies.filter((movie) => movie.id !== id));
   };
 
+  // //Fetch single movie, need this to update rating
+  // const fetchMovie = async (id) => {
+  //   const res = await fetch(`http://localhost:3000/movies/${id}`);
+  //   const data = await res.json();
+
+  //   return data;
+  // };
+
+  // const updateRating = async (id) => {
+  //   // e.preventDefault();
+  //   // setRating(e.target.value);
+
+  //   const movieToUpdate = await fetchMovie(id);
+  //   const updateMovie = {
+  //     ...movieToUpdate,
+  //     rating: rating,
+  //   };
+
+  //   const res = await fetch(`http://localhost:3000/movies/${id}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(updateMovie),
+  //   });
+
+  //   const data = await res.json();
+
+  //   setMovies(...movies, data);
+  // };
+
   //toggle plot
   const togglePlot = (id) => {
     setMovies(
@@ -77,7 +109,13 @@ function App() {
       />
       {showAddMovie && <AddMovie onAdd={addMovie} />}
       {movies.length > 0 ? (
-        <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
+        <Movies
+          // onUpdate={updateRating}
+          movies={movies}
+          onDelete={deleteMovie}
+          onToggle={togglePlot}
+          // rating={rating}
+        />
       ) : (
         "No Movies to Show"
       )}

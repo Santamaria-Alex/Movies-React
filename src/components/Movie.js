@@ -5,7 +5,7 @@ import { useState } from "react";
 import Modal from "./Modal";
 import { IconContext } from "react-icons/lib";
 
-const Movie = ({ movie, onDelete, onToggle }) => {
+const Movie = ({ movie, onDelete, onToggle, onUpdate, rating }) => {
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -22,7 +22,7 @@ const Movie = ({ movie, onDelete, onToggle }) => {
     <div className="card">
       <div className={isFlipped ? "card-inner" : "card-inner is-flipped"}>
         <div className="card-face card-face-front">
-          {modal && <Modal />}
+          {modal && <Modal rating={rating} onUpdate={onUpdate} />}
           <img className="poster" src={movie.poster} alt="No Poster Provided" />
           {!modal && (
             <IconContext.Provider value={{ color: "white", size: "20px" }}>
