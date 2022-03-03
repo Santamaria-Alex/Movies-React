@@ -21,7 +21,7 @@ const Modal = ({ movie }) => {
     const movieToUpdate = await fetchMovie(id);
     const updateMovie = {
       ...movieToUpdate,
-      rating: rating,
+      rating: setRating(rating),
     };
 
     const res = await fetch(`http://localhost:3000/movies/${id}`, {
@@ -39,22 +39,26 @@ const Modal = ({ movie }) => {
     e.preventDefault();
     setRating(e.target.value);
 
-    updateRating(rating);
+    updateRating();
   };
 
   return (
     <div className="modal">
       <form className="modal-form">
-        <label className="modal-header">Update Rating!</label>
+        <label htmlFor="movie-rating" className="modal-header">
+          Update Rating!
+        </label>
         <input
           className="modal-rating"
+          name="movie-rating"
+          id="movie-rating"
           type="number"
           min="0"
           max="10"
-          value={rating}
-          onChange={() => onSubmit}
+          value={movie.rating}
+          //   onChange={() => onSubmit}
         />
-        {/* <button onClick={(id) => onUpdate(movie.id)}>Update</button> */}
+        <button onClick={(id) => onSubmit(movie.id)}>Update</button>
       </form>
     </div>
   );

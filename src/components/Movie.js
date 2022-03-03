@@ -22,7 +22,7 @@ const Movie = ({ movie, onDelete, onToggle, onUpdate, rating }) => {
     <div className="card">
       <div className={isFlipped ? "card-inner" : "card-inner is-flipped"}>
         <div className="card-face card-face-front">
-          {modal && <Modal rating={rating} onUpdate={onUpdate} />}
+          {modal && <Modal movie={movie} rating={rating} onUpdate={onUpdate} />}
           <img className="poster" src={movie.poster} alt="No Poster Provided" />
           {!modal && (
             <IconContext.Provider value={{ color: "white", size: "20px" }}>
