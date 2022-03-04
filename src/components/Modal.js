@@ -6,12 +6,20 @@ const Modal = ({ movie }) => {
   const [rating, setRating] = useState([]);
   const [test, setTest] = useState([]);
 
+  const testing = document.getElementById("quantity");
+
   //Fetch single movie, need this to update rating
   const fetchMovie = async (id) => {
     const res = await fetch(`http://localhost:3000/movies/${id}`);
     const data = await res.json();
 
     return data;
+  };
+
+  const onChange = (e) => {
+    e.preventDefault();
+
+    setRating(e.target.value);
   };
 
   const updateRating = async (id) => {
@@ -21,7 +29,7 @@ const Modal = ({ movie }) => {
     const movieToUpdate = await fetchMovie(id);
     const updateMovie = {
       ...movieToUpdate,
-      rating: setRating(rating),
+      rating: testing.value,
     };
 
     const res = await fetch(`http://localhost:3000/movies/${id}`, {
@@ -33,6 +41,17 @@ const Modal = ({ movie }) => {
     });
 
     const data = await res.json();
+
+    setRating(
+      movie.map((movie) =>
+        movie.id === id
+          ? {
+              ...movie,
+              rating: testing.value,
+            }
+          : rating
+      )
+    );
   };
 
   const onSubmit = (e) => {
@@ -45,20 +64,17 @@ const Modal = ({ movie }) => {
   return (
     <div className="modal">
       <form className="modal-form">
-        <label htmlFor="movie-rating" className="modal-header">
-          Update Rating!
-        </label>
+        <label htmlFor="quantity">Update Rating!</label>
         <input
-          className="modal-rating"
-          name="movie-rating"
-          id="movie-rating"
           type="number"
-          min="0"
+          id="quantity"
+          name="quantity"
+          min="1"
           max="10"
-          value={movie.rating}
-          //   onChange={() => onSubmit}
+          defaultValue={movie.rating}
+          onChange={(e) => setRating(e.target.value)}
         />
-        <button onClick={(id) => onSubmit(movie.id)}>Update</button>
+        <button onClick={(id) => updateRating(movie.id)}>Update</button>
       </form>
     </div>
   );

@@ -2,7 +2,6 @@
   "movies": [
     {
       "title": "Black Hawk Down",
-      "rating": "5",
       "poster": "https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
       "year": "2001",
       "genre": "Drama, History, War",
@@ -10,11 +9,12 @@
       "plot": "160 elite U.S. soldiers drop into Somalia to capture two top lieutenants of a renegade warlord and find themselves in a desperate battle with a large force of heavily-armed Somalis.",
       "actors": "Josh Hartnett, Ewan McGregor, Tom Sizemore, Eric Bana",
       "id": 2,
-      "plotShow": false
+      "plotShow": false,
+      "rating": "8"
     },
     {
       "title": "tenet",
-      "rating": "5",
+      "rating": "7",
       "poster": "https://m.media-amazon.com/images/M/MV5BYzg0NGM2NjAtNmIxOC00MDJmLTg5ZmYtYzM0MTE4NWE2NzlhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_SX300.jpg",
       "year": "2020",
       "genre": "Action, Sci-Fi",
@@ -26,7 +26,7 @@
     },
     {
       "title": "resident evil",
-      "rating": "5",
+      "rating": "4",
       "poster": "https://m.media-amazon.com/images/M/MV5BZmI1ZGRhNDYtOGVjZC00MmUyLThlNTktMTQyZGE3MzE1ZTdlXkEyXkFqcGdeQXVyNDE5MTU2MDE@._V1_SX300.jpg",
       "year": "2002",
       "genre": "Action, Horror, Sci-Fi",
@@ -79,6 +79,17 @@
       "plot": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order.",
       "actors": "No Actors",
       "id": 14
+    },
+    {
+      "title": "The Batman",
+      "rating": "8.2",
+      "poster": "https://image.tmdb.org/t/p/w200/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+      "year": "2022",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+      "actors": "No Actors",
+      "id": 16
     }
   ]
 }
