@@ -173,10 +173,10 @@ body {
 }
 
 .modal-rating {
-  /* width: 4rem;
-  height: 3rem; */
-  /* font-size: 20px;
-  text-align: center; */
+  width: 4rem;
+  height: 3rem;
+  font-size: 20px;
+  text-align: center;
 }
 
 .card-face-back {

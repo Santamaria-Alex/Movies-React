@@ -66,6 +66,7 @@ const Modal = ({ movie }) => {
       <form className="modal-form">
         <label htmlFor="quantity">Update Rating!</label>
         <input
+          className="modal-rating"
           type="number"
           id="quantity"
           name="quantity"
@@ -74,7 +75,13 @@ const Modal = ({ movie }) => {
           defaultValue={movie.rating}
           onChange={(e) => setRating(e.target.value)}
         />
-        <button onClick={(id) => updateRating(movie.id)}>Update</button>
+        <button
+          className="btn"
+          style={{ backgroundColor: "cornflowerblue" }}
+          onClick={(id) => updateRating(movie.id)}
+        >
+          Update
+        </button>
       </form>
     </div>
   );

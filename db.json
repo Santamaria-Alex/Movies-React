@@ -90,6 +90,28 @@
       "plot": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
       "actors": "No Actors",
       "id": 16
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "rating": "8.7",
+      "poster": "https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+      "year": "1994",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+      "actors": "No Actors",
+      "id": 18
+    },
+    {
+      "title": "Star Wars",
+      "rating": "8.2",
+      "poster": "https://image.tmdb.org/t/p/w200/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
+      "year": "1977",
+      "genre": "No Genre",
+      "director": "No Director",
+      "plot": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+      "actors": "No Actors",
+      "id": 20
     }
   ]
 }

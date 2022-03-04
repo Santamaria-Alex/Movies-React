@@ -63,7 +63,11 @@ export const Result = ({ movie, onAdd }) => {
         </div>
 
         <div className="add-movie">
-          <button className="add-movie-button" onClick={onSubmit}>
+          <button
+            className="add-movie-button btn"
+            style={{ backgroundColor: "cornflowerblue" }}
+            onClick={onSubmit}
+          >
             Add Movie to Database
           </button>
         </div>
