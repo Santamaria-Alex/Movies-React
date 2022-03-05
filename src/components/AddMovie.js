@@ -41,7 +41,7 @@ const AddMovie = ({ onAdd }) => {
         />
       </div>
 
-      <div>
+      <div className="results-container">
         {results.length > 0 && (
           <ul className="testing">
             {results.map((movie) => {

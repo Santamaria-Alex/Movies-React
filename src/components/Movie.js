@@ -40,7 +40,10 @@ const Movie = ({ movie, onDelete, onToggle, onUpdate, rating }) => {
         <div className="card-face card-face-back">
           <div className="card-content">
             <div className="card-header">
-              <h2 className="card-title">{movie.title}</h2>
+              <h2 className="card-title">
+                {movie.title} <br /> {movie.year}
+              </h2>
+
               <FaTimes
                 className="delete-btn"
                 onClick={() => onDelete(movie.id)}
@@ -56,9 +59,6 @@ const Movie = ({ movie, onDelete, onToggle, onUpdate, rating }) => {
             </IconContext.Provider>
 
             <div className="card-body">
-              <h3>
-                {movie.director}, {movie.year}
-              </h3>
               <p>{movie.plot}</p>
             </div>
           </div>

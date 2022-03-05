@@ -70,13 +70,7 @@ function App() {
       />
       {showAddMovie && <AddMovie onAdd={addMovie} />}
       {movies.length > 0 ? (
-        <Movies
-          // onUpdate={updateRating}
-          movies={movies}
-          onDelete={deleteMovie}
-          onToggle={togglePlot}
-          // rating={rating}
-        />
+        <Movies movies={movies} onDelete={deleteMovie} onToggle={togglePlot} />
       ) : (
         "No Movies to Show"
       )}
