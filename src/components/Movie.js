@@ -47,7 +47,7 @@ const Movie = ({ movie, onDelete, onToggle, onUpdate, rating }) => {
               <FaTimes
                 className="delete-btn"
                 onClick={() => onDelete(movie.id)}
-                style={{ color: "red", cursor: "pointer" }}
+                style={{ color: "orange", cursor: "pointer" }}
               />
             </div>
 
